@@ -6,8 +6,8 @@ import taskStyle from "../styles/taskStyle";
 
 import { AgGridReact } from "ag-grid-react";
 
-import userSample from "__mocks__/users";
-import taskSample, { taskStatus } from "__mocks__/tasks";
+import userSample from "../../../__mocks__/users";
+import taskSample, { taskStatus } from "../../../__mocks__/tasks";
 
 class Task extends Component {
   static propTypes = {};

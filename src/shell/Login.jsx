@@ -16,7 +16,7 @@ import TextField from "@material-ui/core/TextField";
 import { InputAdornment } from "@material-ui/core";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import LockIcon from "@material-ui/icons/Lock";
-import userSample from "__mocks__/users";
+import userSample from "../__mocks__/users";
 
 const styles = theme => ({
   card: {

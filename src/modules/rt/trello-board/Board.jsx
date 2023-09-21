@@ -8,8 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import trelloBoardStyle from "../styles/trelloBoard";
 
-import userSample from "__mocks__/users";
-import taskSample, { taskStatus } from "__mocks__/tasks";
+import userSample from "../../../__mocks__/users";
+import taskSample, { taskStatus } from "../../../__mocks__/tasks";
 import TaskCard from "./TaskCard";
 
 class Board extends Component {

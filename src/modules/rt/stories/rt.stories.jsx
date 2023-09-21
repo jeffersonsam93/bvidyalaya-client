@@ -7,8 +7,8 @@ import RT from "../RT";
 import Task from "../tasks/Task";
 import Board from "../trello-board/Board";
 import TaskCard from "../trello-board/TaskCard";
-import userSample from "__mocks__/users";
-import taskSample from "__mocks__/tasks";
+import userSample from "../../../__mocks__/users";
+import taskSample from "../../../__mocks__/tasks";
 
 const getUser = task => {
   return userSample.find(element => {
