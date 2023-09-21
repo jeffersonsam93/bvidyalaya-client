@@ -1,0 +1,72 @@
+{
+  "name": "schoolproj",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.9.9",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "ag-grid": "^17.1.1",
+    "ag-grid-react": "^17.1.0",
+    "axios": "^0.22.0",
+    "chartist": "^0.11.4",
+    "history": "^4.10.1",
+    "nuka-carousel": "^4.6.6",
+    "react": "^16.13.1",
+    "react-animate-on-scroll": "^2.1.5",
+    "react-beautiful-dnd": "^7.1.3",
+    "react-chartist": "^0.13.3",
+    "react-color": "^2.18.0",
+    "react-dom": "^16.13.1",
+    "react-dom-factories": "^1.0.2",
+    "react-fast-marquee": "^1.2.1",
+    "react-google-charts": "^1.6.6",
+    "react-redux": "^5.1.2",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts": "1.0.17",
+    "react-upload-gallery": "^0.4.0",
+    "redux": "^3.7.2",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0",
+    "tinycolor2": "^1.4.1",
+    "typeface-roboto": "0.0.54"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "start:ssr": "node ./server/server.js",
+    "ssr": "cross-env NODE_ENV=production webpack --config ./webpack.ssr.config.js",
+    "test": "react-scripts test --env=jsdom",
+    "test:CI": "react-scripts test --env=jsdom --testResultsProcessor ./node_modules/jest-junit --coverage --coverageDirectory=reports/coverage",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public",
+    "analyze": "source-map-explorer build/static/js/main.*"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.12",
+    "@storybook/addon-links": "^3.4.12",
+    "@storybook/addons": "^3.4.12",
+    "@storybook/react": "^3.4.12",
+    "babel-core": "^6.26.3",
+    "cross-env": "^5.2.1",
+    "flow-bin": "^0.70.0",
+    "jest-junit": "^3.7.0",
+    "react-test-renderer": "^16.13.1",
+    "source-map-explorer": "^1.8.0"
+  },
+  "jest": {
+    "coverageReporters": [
+      "cobertura"
+    ]
+  },
+  "jest-junit": {
+    "suiteName": "Eagle Jest Tests",
+    "output": "reports/test/junit.xml",
+    "classNameTemplate": "{classname}.{title}",
+    "titleTemplate": "{classname} - {title}",
+    "ancestorSeparator": " > ",
+    "usePathForSuiteName": "true"
+  }
+}

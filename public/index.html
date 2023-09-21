@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="%PUBLIC_URL%/logo.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="%PUBLIC_URL%/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+  <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <style>
+      ::-webkit-scrollbar { width: 0 !important;display: none; }
+      .root { overflow: -moz-scrollbars-none; }
+      .root { -ms-overflow-style: none; }
+    </style>
+    <script>
+      if (window.document.documentMode) {
+        // polyfill IE11 in a blocking way
+        var s = document.createElement('script');
+        s.src = 'https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js';
+        document.head.appendChild(s);
+      } else if (!Object.assign) {
+        // polyfill other non-evergreen browsers in a blocking way
+        var polyfillUrl =
+          "https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find&flags=gated&unknown=polyfill";
+  
+        // send a blocking XHR to fetch the polyfill
+        // then append it to the document so that its eval-ed synchronously
+        // this is required because the method used for IE is not reliable with other non-evergreen browsers
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("load", function () {
+          var s = document.createElement('script');
+          s.type = 'text/javascript';
+          var code = this.responseText;
+          s.appendChild(document.createTextNode(code));
+          document.head.appendChild(s);
+        });
+        xhr.open("GET", polyfillUrl, false);
+        xhr.send();
+      }
+  
+    </script>
+  <title>Bharathi Vidyalaya, Kulipatty, Dindigul</title>
+</head>
+
+<body>
+  <noscript>
+    Bharathi Vidyalaya Nursery and Primary School, Kulipatty, Dindigul is a friendly, welcoming school where children are happy and enjoy learning.Our vision is to grow GREAT citizens, empowered to live successfully in their personal and global lives.
+    We highly value connections with our parents and community. Building strong family and community partnerships enables us to maximise the learning and social experiences of our students.
+    We are very fortunate to have the Kaipara area’s Resource Teachers for Learning and Behaviour (RTLB) and Resource Teacher: Literacy (RTLit) based by our school. We also have our own SWiS (Social Worker in School).
+  </noscript>
+  <div id="root">
+    <!-- <h1>{{.message}}</h1> -->
+  </div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+</html>
