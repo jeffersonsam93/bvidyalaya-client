@@ -8,7 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from '@material-ui/core/IconButton';
 //import Divider from 'material-ui/Divider';
 import Button from "@material-ui/core/Button";
-import Popover from "@material-ui/core/Popover";
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Marquee from "react-fast-marquee";
@@ -22,7 +21,6 @@ import Hidden from "@material-ui/core/Hidden";
 import MenuIcon from '@material-ui/icons/Menu';
 import { ECData } from "./HomeData";
 import HomeCard from "./HomeCard";
-import Login from "../shell/Login";
 import Slide from "./Slide";
 import { changeSiteData } from "core/state/actions";
 import  Carousel from 'nuka-carousel';
@@ -225,7 +223,6 @@ class Home extends Component {
   }
   render() {
     const { classes, ecData } = this.props;
-    const { open } = this.state;
     const data = ecData ? ECData : ECData;
     
     return (
