@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.primary.contrastText
   },
   rightIcon: {
-    marginLeft: theme.spacing.unit
+    marginLeft: theme.spacing(1)
   },
   iconSmall: {
     fontSize: 20
@@ -71,10 +71,10 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.primary.contrastText
   },
   content: {
-    paddingBottom: theme.spacing.unit * 8,
-    paddingTop: theme.spacing.unit * 8,
+    paddingBottom: theme.spacing(8),
+    paddingTop: theme.spacing(8),
     [theme.breakpoints.up("sm")]: {
-      paddingTop: theme.spacing.unit * 12
+      paddingTop: theme.spacing(12)
     }
   },
   text: {
@@ -90,7 +90,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center"
   },
   button: {
-    marginTop: theme.spacing.unit * 3
+    marginTop: theme.spacing(3)
   },
   logo: {
     //margin: '20px 0',
@@ -107,14 +107,14 @@ const useStyles = makeStyles(theme => ({
     border: "1px inset"
   },
   steps: {
-    maxWidth: theme.spacing.unit * 130,
+    maxWidth: theme.spacing(130),
     margin: "auto"
   },
   step: {
-    padding: `${theme.spacing.unit * 3}px ${theme.spacing.unit * 2}px`
+    padding: `${theme.spacing(3)}px ${theme.spacing(2)}px`
   },
   stepIcon: {
-    marginBottom: theme.spacing.unit
+    marginBottom: theme.spacing(1)
   },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
@@ -254,13 +254,18 @@ const Home = (props) => {
   useEffect(()=>{
     jumpToHash();
   },[hashLocation]);
+  const HyperLink = React.forwardRef((props, ref) => {
+    console.log(props,ref);
+    return(
+    <Link {...props} ref={ref} />
+  )})
     return (
       <div className={classes.root} ref={homeDiv}>
         <AppBar
           className={classes.appBar}
           position="sticky"
           color="default"
-          elevation={0.5}
+          elevation={1}
         >
           <Toolbar>
             {/* <Typography variant="title" color="inherit">
@@ -280,7 +285,7 @@ const Home = (props) => {
             <Typography variant="h4" color="inherit" style={{fontFamily:'sans-serif'}}>
               {pageData.name}
             </Typography>
-            <Typography variant="p" color="inherit" style={{fontFamily:'cursive',fontSize:'0.9rem'}}>
+            <Typography color="inherit" style={{fontFamily:'cursive',fontSize:'0.9rem'}}>
               {pageData.slogan}
             </Typography>
             </div>
@@ -301,14 +306,8 @@ const Home = (props) => {
                   key={det.id}
                   color="secondary"
                   className={classes.linkButtons + firstBtnClasses}
-                  component={buttonProps => (
-                    <Link
-                      variant="button"
-                      prefetch="true"
-                      to={"/#" + det.id}
-                      {...buttonProps}
-                    />
-                  )}
+                  component={HyperLink}
+                  to={"/#" + det.id}
                 >
                   {det.name}
                   <KeyboardArrowDown
@@ -338,7 +337,7 @@ const Home = (props) => {
           }}
           autoplayInterval={5000}
           >
-          {slideData.map((slide)=><Slide src={slide.slideImg} data={slide.slideInfo} />)}
+          {slideData.map((slide,idx)=><Slide src={slide.slideImg} key={idx} data={slide.slideInfo} />)}
           </Carousel>
           </div>
           {/* <Paper className={classes.root} elevation={0.5}>
@@ -414,6 +413,7 @@ const Home = (props) => {
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
           onClose={()=>{setanchorEl(null)}}
+          getContentAnchorEl={null} 
           anchorOrigin={{
             vertical: 'bottom',
             horizontal: 'left',
@@ -425,6 +425,7 @@ const Home = (props) => {
         >
            {pageData && pageData.details ? pageData.details.map((det, index) => {
             return(<Link
+              key={index}
               to={"/#" + det.id}
             >
               <MenuItem onClick={()=>{setanchorEl(null)}}>{det.name}</MenuItem>

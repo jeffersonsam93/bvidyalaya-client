@@ -94,7 +94,6 @@ const HomeCard = (props) => {
 }
 
 HomeCard.propTypes = {
-  classes: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired
 };
 

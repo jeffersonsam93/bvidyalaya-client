@@ -66,7 +66,6 @@ const Location = (props) => {
 }
 
 Location.propTypes = {
-  classes: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired
 };
 

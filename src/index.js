@@ -1,6 +1,5 @@
 import React from "react";
 import * as ReactDOM from 'react-dom/client';
-import createHistory from "history/createBrowserHistory";
 import PageNotFound from "./home/components/PageNotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MuiThemeProvider } from "@material-ui/core/styles";
@@ -11,7 +10,6 @@ import "./index.css";
 import * as theme from "./styles/variable";
 import registerServiceWorker from "./registerServiceWorker";
 
-const history = createHistory();;
 
 const Root = props => (
     <BrowserRouter>
@@ -27,7 +25,10 @@ const Root = props => (
 //console.log(theme);
 console.log(process.env);
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const muitheme = createTheme(theme);
 root.render(
+  <MuiThemeProvider theme={muitheme}>
       <Root />
+  </MuiThemeProvider>
 );
 registerServiceWorker();

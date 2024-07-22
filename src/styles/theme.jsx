@@ -1,4 +1,4 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
 import { primaryColor, secondaryColor, themeType } from "./variable";
 // import tinycolor from 'tinycolor2';
@@ -29,9 +29,9 @@ import { primaryColor, secondaryColor, themeType } from "./variable";
 //     };
 //   };
 
-export default function createTheme(setting) {
+export default function createMuiTheme(setting) {
   const breakpoints = createBreakpoints({})
-  return createMuiTheme({
+  return createTheme({
     palette: {
       primary: { main: setting.primaryColor || primaryColor }, // Purple and green play nicely together.
       secondary: { main: setting.secondaryColor || secondaryColor }, // This is just green.A700 as hex.
