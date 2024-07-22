@@ -231,6 +231,7 @@ const Home = (props) => {
     setSlideData(slideData);
     setInfoText(infoText);
     setAdmisssion_url(contact_us[0].admission_url.href);
+    jumpToHash();
   }
 
   const jumpToHash = () => {
@@ -249,7 +250,7 @@ const Home = (props) => {
   };
   useEffect(()=>{
     initializeData();
-    jumpToHash();
+    
   },[]);
   useEffect(()=>{
     jumpToHash();
