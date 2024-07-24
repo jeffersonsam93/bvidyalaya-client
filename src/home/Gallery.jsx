@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     return (
       event ? <GalleryViewer event={event} photos={photos} setEvent={setEvent}/>:<div className={classes.root}>
       <ImageList rowHeight={70} className={classes.gridList} gap={20}>
-      <Grid container spacing={4} style={{width:'100%',height:'100%'}}>
+      <Grid container spacing={4} style={{width:'100%',height:'100%',margin:'0px'}}>
       {data && data.events ? data.events.map((event, idx) => (
         <Grid key={idx} item xs={12} sm={4} md={3}>
             <ImageListItem key={event.event_name} style={{cursor:'pointer'}} onClick={()=> {
@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
               }}
             >
               <div style={{width:'100%'}}>
-                <img style={{width:'100%',maxHeight:'250px'}} src={event.cover_pic} alt={event.event_name} />
+                <img style={{width:'100%',height:'22vh'}} src={event.cover_pic} alt={event.event_name} />
               </div>
               <ImageListItemBar style={{textAlign:'center'}}
                 title={event.event_name}
