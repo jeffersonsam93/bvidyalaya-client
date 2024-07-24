@@ -1,8 +1,5 @@
 import React from "react";
-import logo from "assets/logo.png";
-import lablogo from "assets/eagle_labs_logo.png";
-import Slide1 from 'assets/Mercy.jpg';
-import Slide2 from 'assets/headmaster.jpeg';
+import logo from "../assets/logo.png";
 
 const wwa=(<p>
     Bharathi Vidyalaya was established in the year 1987 (Recognised by the Govt. of Tamil Nadu). Through continued diligence and hard-work we have provide a strong foundation to hundreds of students with weak economic background. The students who have received primary
@@ -45,14 +42,14 @@ const ECData = {
           detail: "Chairman/HeadMaster",
           animationIn: "fadeIn",
           animationOut: "fadeOut",
-          img: Slide2,
+          img: '',
         },
         {
           name: "MERCY DABORA S",
           detail: "Correspondent, State Best Teacher Awardee",
           animationIn: "fadeIn",
           animationOut: "fadeOut",
-          img: Slide1,
+          img: '',
         }
       ]
     },
@@ -73,8 +70,35 @@ const ECData = {
         location: "https://www.google.co.in/maps/place/BHARATHI+VIDYALAYA+NURSERY+AND+PRIMARY+SCHOOL/@10.3830759,78.0196592,18.59z/data=!4m12!1m6!3m5!1s0x3b00a993ab22833f:0x887f43c4647a417!2sBHARATHI+VIDYALAYA+NURSERY+AND+PRIMARY+SCHOOL!8m2!3d10.382798!4d78.0204056!3m4!1s0x3b00a993ab22833f:0x887f43c4647a417!8m2!3d10.382798!4d78.0204056?hl=en",
       },
       paras: []
-    }
-    ,
+    },
+    {
+      id: "gallery",
+      name: "Gallery",
+      paras: [],
+      tileData: [
+        {
+          name: "Annual Day",
+          detail: "19-Jan-2024",
+          animationIn: "fadeIn",
+          animationOut: "fadeOut",
+          img: '',
+        },
+        {
+          name: "Medical Camp",
+          detail: "21-Jan-2024",
+          animationIn: "fadeIn",
+          animationOut: "fadeOut",
+          img: '',
+        },
+        {
+          name: "Sports Day",
+          detail: "30-Jun-2024",
+          animationIn: "fadeIn",
+          animationOut: "fadeOut",
+          img: '',
+        },
+      ]
+    },
     {
       id: "ctu",
       name: "Reach Us",

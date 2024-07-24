@@ -4,38 +4,31 @@
   "private": true,
   "homepage": "https://bharathividyalaya.co.in",
   "dependencies": {
+    "@contentstack/live-preview-utils": "^2.0.2",
+    "@contentstack/utils": "^1.3.8",
     "@material-ui/core": "^4.9.9",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.60",
-    "ag-grid": "^17.1.1",
-    "ag-grid-react": "^17.1.0",
     "axios": "^0.22.0",
-    "chartist": "^0.11.4",
+    "contentstack": "^3.20.0",
     "history": "^4.10.1",
     "nuka-carousel": "^4.6.6",
-    "react": "^16.13.1",
+    "react": "^18.3.1",
     "react-animate-on-scroll": "^2.1.5",
     "react-beautiful-dnd": "^7.1.3",
-    "react-chartist": "^0.13.3",
     "react-color": "^2.18.0",
-    "react-dom": "^16.13.1",
+    "react-dom": "^18.3.1",
     "react-dom-factories": "^1.0.2",
     "react-fast-marquee": "^1.2.1",
-    "react-google-charts": "^1.6.6",
-    "react-redux": "^5.1.2",
-    "react-router-dom": "^4.3.1",
-    "react-router-redux": "^5.0.0-alpha.9",
-    "react-scripts": "1.0.17",
-    "react-upload-gallery": "^0.4.0",
-    "redux": "^3.7.2",
-    "redux-persist": "^5.10.0",
-    "redux-thunk": "^2.3.0",
+    "react-image-gallery": "^1.3.0",
+    "react-router-dom": "^6.25.1",
+    "react-scripts": "^5.0.1",
     "tinycolor2": "^1.4.1",
     "typeface-roboto": "0.0.54"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "start:ssr": "node ./server/server.js",
     "ssr": "cross-env NODE_ENV=production webpack --config ./webpack.ssr.config.js",
     "test": "react-scripts test --env=jsdom",
@@ -55,7 +48,7 @@
     "flow-bin": "^0.70.0",
     "jest-junit": "^3.7.0",
     "react-test-renderer": "^16.13.1",
-    "source-map-explorer": "^1.8.0"
+    "source-map-explorer": "^2.5.3"
   },
   "jest": {
     "coverageReporters": [
@@ -69,5 +62,22 @@
     "titleTemplate": "{classname} - {title}",
     "ancestorSeparator": " > ",
     "usePathForSuiteName": "true"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "rules": {
+      "ban-ts-comment": 0
+    }
   }
 }
