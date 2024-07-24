@@ -56,7 +56,7 @@
     ]
   },
   "jest-junit": {
-    "suiteName": "Eagle Jest Tests",
+    "suiteName": "Bvidyalaya Jest Tests",
     "output": "reports/test/junit.xml",
     "classNameTemplate": "{classname}.{title}",
     "titleTemplate": "{classname} - {title}",
