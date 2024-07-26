@@ -28,7 +28,7 @@ export default function GalleryViewer(props) {
             </Link>
             <Typography
             sx={{ display: 'flex', alignItems: 'center' }}
-            color="text.primary"
+            color="textPrimary"
             >
             <GrainIcon sx={{ mr: 0.5 }} fontSize="inherit" />
             {event}

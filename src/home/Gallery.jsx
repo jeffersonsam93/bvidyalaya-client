@@ -5,6 +5,7 @@ import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import { makeStyles } from '@material-ui/core/styles';
 import GalleryViewer from './GalleryViewer';
+import { getEntrywithEntryId } from '../contentstack/contentstack';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -35,8 +36,18 @@ const useStyles = makeStyles(theme => ({
       {data && data.events ? data.events.map((event, idx) => (
         <Grid key={idx} item xs={12} sm={4} md={3}>
             <ImageListItem key={event.event_name} style={{cursor:'pointer'}} onClick={()=> {
-                setEvent(event.event_name);
-                setPhotos(event.photos);
+                getEntrywithEntryId({
+                  contentTypeUid:'photos',
+                  entryId:event.photo_entry_id
+                }).then((res)=>{
+                  const eventPhotos=res.event_photos.map((photo)=>{
+                    return {original:photo.url, thumbnail:photo.url}
+                  })
+                  setEvent(event.event_name);
+                  setPhotos(eventPhotos);
+                }).catch((err)=>{
+                  console.log(err);
+                })
               }}
             >
               <div style={{width:'100%'}}>

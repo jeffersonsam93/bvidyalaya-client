@@ -194,8 +194,8 @@ const Home = (props) => {
                 event_date: new Date(event.event_date).toLocaleDateString('en-GB', {
                   day: 'numeric', month: 'short', year: 'numeric'
                 }).replace(/ /g, '-'), 
-                cover_pic:event.cover_pic.url,
-                photos: event.event_photos.map((photo)=> {return {original:photo.url, thumbnail:photo.url}})
+                cover_pic: event.cover_pic.url,
+                photo_entry_id: event.events_photos[0].uid, 
               }
             })
           },

@@ -64,6 +64,25 @@ export const getEntry = ({
   });
 };
 
+export const getEntrywithEntryId = ({
+  contentTypeUid,
+  entryId,
+}) => {
+  return new Promise((resolve, reject) => {
+    const query = Stack.ContentType(contentTypeUid).Entry(entryId);
+    query
+      .toJSON()
+      .fetch()
+      .then(
+        (result) => {
+          resolve(result);
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+  });
+};
 /**
  *fetches specific entry from a content-type
  *
