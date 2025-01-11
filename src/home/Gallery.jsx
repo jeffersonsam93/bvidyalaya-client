@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
                   entryId:event.photo_entry_id
                 }).then((res)=>{
                   const eventPhotos=res.event_photos.map((photo)=>{
-                    return {original:photo.url, thumbnail:photo.url}
+                    return {original:photo.url, thumbnail:photo.url, thumbnailHeight: "50 px"}
                   })
                   setEvent(event.event_name);
                   setPhotos(eventPhotos);
