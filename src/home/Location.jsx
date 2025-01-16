@@ -28,6 +28,15 @@ const useStyles = makeStyles(theme => ({
       },
 }));
 
+const lyticSendEvent=(detail, name)=>{
+  lytics('send', 'event', {
+    event: 'button_click',
+    category: detail,
+    action: 'reach',
+    label: name,
+  });
+}
+
 const Location = (props) => {
   const classes = useStyles();
   const { className, data } = props;
@@ -48,16 +57,29 @@ const Location = (props) => {
   </Card>
   <br/>
   <div className={classes.btnroot}>
-  <Fab color="primary" aria-label="mail" onClick={()=>window.location.href = `mailto:${data.email}`}>
+  <Fab color="primary" aria-label="mail" onClick={()=>
+    {
+      lyticSendEvent('mail', 'Email');
+      return window.location.href = `mailto:${data.email}`;
+    }}>
       <Mail />
   </Fab>
-  <Fab color="primary" aria-label="phone" onClick={()=>window.location.href = `tel:${data.mobNumber}`}>
+  <Fab color="primary" aria-label="phone" onClick={()=> {
+    lyticSendEvent('phone', 'Phone');
+    return window.location.href = `tel:${data.mobNumber}`;
+  }}>
       <Call />
   </Fab>
-  <Fab color="primary" aria-label="fb" onClick={()=>window.open(data.facebook)}>
+  <Fab color="primary" aria-label="fb" onClick={()=> {
+    lyticSendEvent('facebook', 'Facebook');
+    return window.open(data.facebook);
+  }}>
       <Facebook />
   </Fab>
-  <Fab color="primary" aria-label="location" onClick={()=>window.open(data.location)}>
+  <Fab color="primary" aria-label="location" onClick={()=>{
+    lyticSendEvent('location', 'Location');
+    return window.open(data.location)
+  }}>
       <LocationOn />
   </Fab>
   </div>

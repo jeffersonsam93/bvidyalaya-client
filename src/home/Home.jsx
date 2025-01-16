@@ -241,6 +241,12 @@ const Home = (props) => {
       setTimeout(() => {
         const anchorName = hash.replace("#", "");
         console.log(anchorName);
+        lytics('send', 'event', {
+          event: 'url_change',
+          category: anchorName,
+          action: 'page_load',
+          label: 'Redirection',
+        });
         let anchorElement = document.getElementById(anchorName);
         if (anchorElement) {
           anchorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
