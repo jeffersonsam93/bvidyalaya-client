@@ -146,6 +146,12 @@ const useStyles = makeStyles(theme => ({
                   className={classes.button}
                   startIcon={<Send />}
                   onClick={()=>{
+                    jstag('send', 'event', {
+                      event: 'button_click',
+                      category: type,
+                      action: 'contact_clicked',
+                      label: 'Register',
+                    });
                     window.open(type==='staff'?data.staff_url:data.admission_url);
                   }}
                 >

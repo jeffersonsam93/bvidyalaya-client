@@ -241,7 +241,7 @@ const Home = (props) => {
       setTimeout(() => {
         const anchorName = hash.replace("#", "");
         console.log(anchorName);
-        lytics('send', 'event', {
+        jstag('send', 'event', {
           event: 'url_change',
           category: anchorName,
           action: 'page_load',

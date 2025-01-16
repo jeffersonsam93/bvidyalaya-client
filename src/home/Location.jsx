@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const lyticSendEvent=(detail, name)=>{
-  lytics('send', 'event', {
+  jstag('send', 'event', {
     event: 'button_click',
     category: detail,
     action: 'reach',
