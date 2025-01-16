@@ -146,7 +146,7 @@ const useStyles = makeStyles(theme => ({
                   className={classes.button}
                   startIcon={<Send />}
                   onClick={()=>{
-                    jstag('send', 'event', {
+                    jstag.send({
                       event: 'button_click',
                       category: type,
                       action: 'contact_clicked',

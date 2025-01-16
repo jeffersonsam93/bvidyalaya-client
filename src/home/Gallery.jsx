@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
       {data && data.events ? data.events.map((event, idx) => (
         <Grid key={idx} item xs={12} sm={4} md={3}>
             <ImageListItem key={event.event_name} style={{cursor:'pointer'}} onClick={()=> {
-                jstag('send', 'event', {
+                jstag.send({
                   event: 'image_click',
                   category: event.event_name,
                   action: 'event_selected',
